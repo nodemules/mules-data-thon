@@ -1,5 +1,10 @@
+### JAVA ###
 target/
+
+### MAVEN ###
 !.mvn/wrapper/maven-wrapper.jar
+mvnw*
+.mvn/
 
 ### STS ###
 .apt_generated
