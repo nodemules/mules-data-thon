@@ -1,8 +1,8 @@
 package com.nodemules.data.api.generator;
 
+import com.nodemules.data.api.car.bean.Car;
 import com.nodemules.data.api.generator.bean.GeneratorResponse;
 import com.nodemules.data.api.person.bean.Person;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,15 +16,26 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/generator")
 public class GeneratorController {
 
-  @Autowired
   private GeneratorOperations generatorService;
 
+  public GeneratorController(GeneratorService generatorService) {
+    this.generatorService = generatorService;
+  }
+
   @RequestMapping("/person")
-  public GeneratorResponse<Person> generatePersons(@RequestParam Integer number) {
+  public GeneratorResponse<Person> generatePersons(@RequestParam(required = false) Integer number) {
     if (number == null) {
       return generatorService.generatePersons();
     }
     return generatorService.generatePersons(number);
+  }
+
+  @RequestMapping("/car")
+  public GeneratorResponse<Car> generateCars(@RequestParam(required = false) Integer number) {
+    if (number == null) {
+      return generatorService.generateCars();
+    }
+    return generatorService.generateCars(number);
   }
 
 }

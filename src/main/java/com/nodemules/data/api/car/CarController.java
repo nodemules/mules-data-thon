@@ -1,6 +1,6 @@
-package com.nodemules.data.api.person;
+package com.nodemules.data.api.car;
 
-import com.nodemules.data.api.person.bean.Person;
+import com.nodemules.data.api.car.bean.Car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,20 +14,19 @@ import java.util.List;
  * @version 0.1.0
  */
 @RestController
-@RequestMapping("/api/person")
-public class PersonController {
+@RequestMapping("/api/car")
+public class CarController {
 
   @Autowired
-  private PersonOperations personService;
+  private CarOperations carService;
 
   @RequestMapping
-  public List<Person> getPersons() {
-    return personService.getPersons();
+  public List<Car> getCars() {
+    return carService.getCars();
   }
 
   @RequestMapping(value = "/{id}")
-  public Person getPerson(@PathVariable Long id) {
-    return personService.getPerson(id);
+  public Car getCar(@PathVariable Long id) {
+    return carService.getCar(id);
   }
-
 }

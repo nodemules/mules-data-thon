@@ -8,3 +8,17 @@ spring:
     hibernate:
       dialect: org.hibernate.dialect.MySQL5InnoDBDialect
       ddl-auto: update
+
+---
+spring:
+  profiles: test
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/mules_data
+    username: mules_data_api
+    password: p397wDwKGhlfyGqseWzb
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+      ddl-auto: update

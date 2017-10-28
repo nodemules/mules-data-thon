@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -12,6 +13,7 @@ import java.util.Date;
 /**
  * @author brent
  * @since 10/24/17.
+ * @version 0.1.0
  */
 @Data
 @AllArgsConstructor
@@ -31,7 +33,13 @@ public class Person implements Serializable {
 
   private String middleName;
 
+  @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
   private Date dateOfBirth;
+
+  @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+  public Date getDateOfBirth() {
+    return this.dateOfBirth;
+  }
 
   public Person(String firstName, String lastName) {
     this.firstName = firstName;

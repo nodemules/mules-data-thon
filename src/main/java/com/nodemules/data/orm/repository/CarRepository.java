@@ -1,20 +1,19 @@
 package com.nodemules.data.orm.repository;
 
-import com.nodemules.data.orm.domain.person.PersonEntity;
+import com.nodemules.data.orm.domain.car.CarEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Set;
 
 /**
  * @author brent
+ * @since 10/26/17.
  * @version 0.1.0
- * @since 10/25/17.
  */
 @Repository
-public interface PersonRepository extends JpaRepository<PersonEntity, Long> {
+public interface CarRepository extends JpaRepository<CarEntity, Long> {
 
-  List<PersonEntity> findByIdIn(Set<Long> ids);
+  List<CarEntity> findByModelMakeName(String name);
 
 }

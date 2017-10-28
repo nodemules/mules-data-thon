@@ -7,24 +7,17 @@ import lombok.NoArgsConstructor;
 
 /**
  * @author brent
- * @since 10/24/17.
+ * @since 10/26/17.
  * @version 0.1.0
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Car {
+public class Model {
 
-  private long id;
-
-  @JsonIgnoreProperties(value = { "models" })
+  private Long id;
+  private String name;
   private Make make;
-
-  @JsonIgnoreProperties(value = { "make" })
-  private Model model;
-
-  private int miles;
-  private int year;
 
 }

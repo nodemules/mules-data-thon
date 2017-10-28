@@ -2,7 +2,7 @@ package com.nodemules.data.mapper.person;
 
 import com.nodemules.data.api.person.bean.Person;
 import com.nodemules.data.core.person.model.PersonModel;
-import com.nodemules.data.orm.domain.PersonEntity;
+import com.nodemules.data.orm.domain.person.PersonEntity;
 import fr.xebia.extras.selma.Mapper;
 import fr.xebia.extras.selma.Maps;
 
@@ -12,6 +12,7 @@ import java.util.Set;
 /**
  * @author brent
  * @since 10/24/17.
+ * @version 0.1.0
  */
 @Mapper
 public interface PersonMapper {

@@ -1,9 +1,8 @@
-package com.nodemules.data.orm.domain;
+package com.nodemules.data.orm.domain.person;
 
 import lombok.Data;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -14,9 +13,7 @@ import java.util.Date;
 @Data
 @Entity
 @Table(name = "person")
-public class PersonEntity implements Serializable {
-
-  private static final long serialVersionUID = 3828598328261781831L;
+public class PersonEntity {
 
   @Id
   @Column(name = "person_id")

@@ -8,6 +8,7 @@ import java.util.Set;
 /**
  * @author brent
  * @since 10/25/17.
+ * @version 0.1.0
  */
 @Data
 public class GeneratorResponse<T> implements Serializable {

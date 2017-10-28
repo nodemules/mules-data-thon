@@ -10,9 +10,10 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author brent
  * @since 10/24/17.
+ * @version 0.1.0
  */
 @Service
-public class PersonEngine implements PersonTemplate {
+public class PersonGenerator implements PersonTemplate {
 
   private static Faker faker;
 
@@ -26,7 +27,7 @@ public class PersonEngine implements PersonTemplate {
     PersonModel p = new PersonModel();
     p.setFirstName(faker.name().firstName());
     p.setLastName(faker.name().lastName());
-    p.setDateOfBirth(faker.date().past(8000, TimeUnit.DAYS));
+    p.setDateOfBirth(faker.date().past(110 * 365, TimeUnit.DAYS));
     return p;
   }
 
